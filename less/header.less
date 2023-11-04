@@ -1,0 +1,55 @@
+header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: @primary-bg-color;
+    padding: 0px 0.5rem;
+    height: 45px;
+    section {
+        font-size: 1.9rem;
+        font-weight: bold;
+        width:100%;
+        @media (min-width: @size[tablet]) {
+            width: auto;
+        }
+    }
+
+    .hamburger {
+        display: block;
+        padding: 0.5rem;
+
+        @media (min-width: @size[tablet]) {
+            display: none;
+        }
+
+        .line {
+            width: 30px;
+            height: 3px;
+            background-color: @primary-tx-color;
+            margin: 5px 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    #hamburger-input {
+        display: none;
+        &:checked~.hamburger {
+            .line:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .line:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -6px);
+            }
+        }
+
+        &:checked~nav {
+            display: block;
+        }
+    }
+}
