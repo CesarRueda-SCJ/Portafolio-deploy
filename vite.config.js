@@ -30,5 +30,5 @@ export default defineConfig({
         htmlPurge({}),
         ViteMinifyPlugin({}),
     ]
-    base: "/Vite-deploy/"
+    base: "/Portafolio-deploy/"
 })
